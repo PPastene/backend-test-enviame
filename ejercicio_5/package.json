@@ -1,0 +1,16 @@
+{
+  "name": "ejercicio_5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "iondex.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@extra-number/divisors": "^1.1.1",
+    "fibonacci": "^1.6.7"
+  }
+}
