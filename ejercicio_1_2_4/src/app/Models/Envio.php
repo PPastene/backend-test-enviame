@@ -12,5 +12,8 @@ class Envio extends Model
     protected $casts = [
         'shipping_address' => 'array',
         'customer' => 'array',
+        'status' => 'array',
+        'label' => 'array',
+        'links' => 'array',
     ];
 }

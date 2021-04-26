@@ -50,21 +50,25 @@ EOT;
         ])->withBody($body, 'application/json')->post('https://stage.api.enviame.io/api/s2/v2/companies/401/deliveries')->json();
 
         $envio = new Envio();
-        $envio->id = $response['data']['identifier'];
         $envio->imported_id = $response['data']['imported_id'];
+        $envio->tracking_number = $response['data']['tracking_number'];
+        $envio->status = $response['data']['status'];
+        $envio->customer = $response['data']['customer'];
+        $envio->shipping_address = $response['data']['shipping_address'];
         $envio->country = $response['data']['country'];
         $envio->carrier = $response['data']['carrier'];
-        $envio->tracking_number = $response['data']['tracking_number'];
         $envio->service = $response['data']['service'];
+        $envio->label = $response['data']['label'];
         $envio->deadline_at = $response['data']['deadline_at'];
-        $envio->shipping_address = $response['data']['shipping_address'];
-        $envio->customer = $response['data']['customer'];
+        $envio->links = $response['data']['links'];
 
         $envio->save();
 
         return response()->json([
             'status' => 'OK',
-            'mensaje' => 'El envio se registró correctamente'
+            'mensaje' => 'El envio se registró correctamente',
+            'data' => $envio
         ], 201);
     }
+
 }

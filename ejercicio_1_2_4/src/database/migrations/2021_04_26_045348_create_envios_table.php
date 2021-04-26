@@ -12,11 +12,14 @@ class CreateEnviosTable extends Migration
             $table->id();
             $table->integer('tracking_number');
             $table->integer('imported_id');
+            $table->json('status');
             $table->json('customer');
             $table->json('shipping_address');
             $table->string('country');
             $table->string('carrier');
             $table->string('service');
+            $table->json('label');
+            $table->json('links');
             $table->string('deadline_at');
             $table->timestamps();
         });
